@@ -37,8 +37,8 @@ var count = 0;
     client.messages
       .create({
         body: 'There is a new tutoring request available! There are currently: ' + current + ' not scheduled!',
-        from: '+13072421388',
-        to: '+14845153348'
+        from: process.env.phoneSend,
+        to: process.env.phoneReceive
       })
       .then(message => console.log(message.sid));
   }
